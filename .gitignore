@@ -6,3 +6,7 @@ requirements.txt
 
 # Face recognition dataset folder
 DukeMTMC-reID/   
+
+#Video datasets for testing the RSTP video stream conversion to Images frames
+GaitDatasetB-silh/
+new video dataset/
