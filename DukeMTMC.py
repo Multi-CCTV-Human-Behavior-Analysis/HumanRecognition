@@ -12,7 +12,7 @@ facenet = InceptionResnetV1(pretrained='vggface2').eval().to(device)
 
 # Input images (update with your image paths)
 image_1_path = 'DukeMTMC-reID/DukeMTMC-reID/bounding_box_test/0003_c1_f0044158.jpg'
-image_2_path = 'DukeMTMC-reID/DukeMTMC-reID/bounding_box_test/0003_c1_f0046798.jpg'
+image_2_path = 'DukeMTMC-reID/DukeMTMC-reID/bounding_box_test/0341_c3_f0081735.jpg'
 
 # Load and preprocess images
 img1 = Image.open(image_1_path).convert('RGB')
