@@ -10,3 +10,14 @@ DukeMTMC-reID/
 #Video datasets for testing the RSTP video stream conversion to Images frames
 GaitDatasetB-silh/
 new video dataset/
+
+#Facial embeddings generated from the Frames 
+embeddings_cam1/
+embeddings_cam2/
+
+#Image frames generated from the RTSP video stream
+frames_cam1/
+frames_cam2/
+
+#Python Code Cache
+__pycache__/
