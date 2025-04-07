@@ -32,6 +32,4 @@ print("\n=== STEP 3: Comparing Embeddings ===")
 matches = compare_embeddings(embeddings1_folder, embeddings2_folder, threshold=0.75)
 
 # Done!
-print("\n🎉 DONE! Matches found:")
-for m in matches:
-    print(f"🟢 {m[0]}  <==>  {m[1]}  | Similarity: {m[2]:.4f}")
+print("\n🎉 DONE! Thank you!")

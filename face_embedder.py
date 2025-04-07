@@ -27,9 +27,11 @@ def generate_embeddings_from_folder(folder_path, output_path):
                     embedding = facenet(face).cpu().numpy()
                     save_name = os.path.splitext(img_name)[0] + ".npy"
                     np.save(os.path.join(output_path, save_name), embedding)
-                    print(f"[INFO] Saved embedding for {img_name}")
-            else:
-                print(f"[WARNING] No face detected in {img_name}")
+            #         print(f"[INFO] Saved embedding for {img_name}")
+            # else:
+            #     print(f"[WARNING] No face detected in {img_name}")
 
         except Exception as e:
             print(f"[ERROR] Failed processing {img_name}: {e}")
+    
+    print(f"[INFO] Saved embedding for Images")

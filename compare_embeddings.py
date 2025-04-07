@@ -13,7 +13,7 @@ def compare_embeddings(folder1, folder2, threshold=0.7):
         for f in os.listdir(folder2) if f.endswith(".npy")
     }
 
-    print(f"\n[INFO] Comparing {len(embeddings1)} embeddings from Camera 1 with {len(embeddings2)} from Camera 2\n")
+    print(f"[INFO] Comparing {len(embeddings1)} embeddings from Camera 1 with {len(embeddings2)} from Camera 2")
 
     matches = []
 
@@ -22,8 +22,9 @@ def compare_embeddings(folder1, folder2, threshold=0.7):
             sim = cosine_similarity(emb1, emb2)[0][0]
             if sim > threshold:
                 matches.append((name1, name2, sim))
-                print(f"[MATCH] {name1} <==> {name2} | Similarity: {sim:.4f} ✅")
+                print(f"[✅ Same Person] {name1} <==> {name2} | Similarity: {sim:.4f}")
 
     if not matches:
-        print("❌ No matching persons found above threshold.")
-    return matches
+        print("❌ Not the same person.")
+        
+    #return matches
