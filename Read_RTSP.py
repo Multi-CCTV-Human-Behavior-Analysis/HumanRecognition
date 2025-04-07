@@ -3,7 +3,7 @@ import os
 
 # Replace with RTSP URL (or use a .mp4 file for now)
 # Example: 'rtsp://admin:password@192.168.1.101:554/Streaming/Channels/101'
-video_path = 'your_video.mp4'
+video_path = 'new video dataset/Falling/istockphoto-1325164835-640_adpp_is - 56.mp4'
 
 cap = cv2.VideoCapture(video_path)
 
