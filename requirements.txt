@@ -17,7 +17,6 @@ matplotlib
 more-itertools
 mpmath
 networkx
-nftables
 numpy
 nvidia-cublas-cu12
 nvidia-cuda-cupti-cu12
@@ -35,7 +34,6 @@ nvidia-nvtx-cu12
 opencv-python
 packaging
 pillow
-PyGObject
 pyparsing
 pyrsistent
 python-dateutil
