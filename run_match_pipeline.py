@@ -4,6 +4,7 @@ from face_embedder import generate_multi_embeddings
 from crop_persons_yolo import crop_persons_from_frames
 from body_embedder import generate_body_embeddings
 from hybrid_compare import hybrid_compare
+from track_and_crop import track_and_crop
 
 # ==== Paths ====
 video1_path = "test_video/view-HC2.mp4"
@@ -54,6 +55,11 @@ hybrid_compare(
     w_face=0.6,
     w_body=0.4
 )
+
+# ==== STEP 6: Track and crop persons in video ====
+print("\n=== STEP 6: Tracking and Cropping Persons in Video ===")
+track_and_crop("test_video/view-HC2.mp4", "tracked_crops_cam1")
+track_and_crop("test_video/view-HC3.mp4", "tracked_crops_cam2")
 
 # ==== Done ====
 print("\n🎉 DONE! Hybrid re-identification completed successfully.")

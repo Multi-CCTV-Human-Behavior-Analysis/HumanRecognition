@@ -19,6 +19,14 @@ embeddings_cam2/
 frames_cam1/
 frames_cam2/
 
+#Body embeddings generated from the Frames 
+body_embeddings_cam1/
+body_embeddings_cam2/
+
+#person cropped images
+person_crops_cam1/
+person_crops_cam2/
+
 #Python Code Cache
 __pycache__/
 test_image/

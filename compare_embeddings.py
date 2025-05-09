@@ -47,6 +47,5 @@ def compare_individual_faces(folder1, folder2, threshold=0.75, decision_ratio=0.
                 "Status": "✅ SAME" if match_ratio >= decision_ratio else "❌ DIFF"
             }
             all_results.append(result)
-            print(f"Person {id1} ⇄ {id2} | Match: {match_ratio:.2%} → {result['Status']}")
 
     return all_results
