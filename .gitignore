@@ -4,35 +4,12 @@ venv/
 # All the required pip libraries for the project
 requirements.txt
 
-# Face recognition dataset folder
-DukeMTMC-reID/   
-
-#Video datasets for testing the RSTP video stream conversion to Images frames
-GaitDatasetB-silh/
-new video dataset/
-
-#Facial embeddings generated from the Frames 
-embeddings_cam1/
-embeddings_cam2/
-
-#Image frames generated from the RTSP video stream
-frames_cam1/
-frames_cam2/
-
-#Body embeddings generated from the Frames 
-body_embeddings_cam1/
-body_embeddings_cam2/
-
-#person cropped images
-person_crops_cam1/
-person_crops_cam2/
-
-#Tracked croped images
-tracked_crops_cam1/
-tracked_crops_cam2/
+Earlier/
 
 #Python Code Cache
 __pycache__/
 test_image/
 .gitignore
 test_video/
+
+outputs/
