@@ -21,3 +21,6 @@ frames_cam2/
 
 #Python Code Cache
 __pycache__/
+test_image/
+.gitignore
+test_video/

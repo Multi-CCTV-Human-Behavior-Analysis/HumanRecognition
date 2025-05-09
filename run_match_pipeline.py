@@ -1,11 +1,11 @@
+from face_embedder import generate_multi_embeddings
+from compare_embeddings import compare_individual_faces
 from video_to_frames import extract_frames
-from face_embedder import generate_embeddings_from_folder
-from compare_embeddings import compare_embeddings
 import os
 
 # Paths to your input videos
-video1_path = "new video dataset/Falling/istockphoto-1325164835-640_adpp_is - 56.mp4"
-video2_path = "new video dataset/Falling/istockphoto-874189204-640_adpp_is.mp4"
+video1_path = "test_video/view-HC2.mp4"
+video2_path = "test_video/view-HC3.mp4"
 
 # Output folders
 frames1_folder = "frames_cam1"
@@ -24,12 +24,12 @@ extract_frames(video2_path, frames2_folder)
 
 # STEP 2: Generate face embeddings
 print("\n=== STEP 2: Generating Face Embeddings ===")
-generate_embeddings_from_folder(frames1_folder, embeddings1_folder)
-generate_embeddings_from_folder(frames2_folder, embeddings2_folder)
+generate_multi_embeddings(frames1_folder, embeddings1_folder)
+generate_multi_embeddings(frames2_folder, embeddings2_folder)
 
 # STEP 3: Compare embeddings and find matches
 print("\n=== STEP 3: Comparing Embeddings ===")
-matches = compare_embeddings(embeddings1_folder, embeddings2_folder, threshold=0.75)
+compare_individual_faces(embeddings1_folder, embeddings2_folder, threshold=0.75, decision_ratio=0.8)
 
 # Done!
 print("\n🎉 DONE! Thank you!")
