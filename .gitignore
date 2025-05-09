@@ -27,6 +27,10 @@ body_embeddings_cam2/
 person_crops_cam1/
 person_crops_cam2/
 
+#Tracked croped images
+tracked_crops_cam1/
+tracked_crops_cam2/
+
 #Python Code Cache
 __pycache__/
 test_image/
