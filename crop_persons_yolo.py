@@ -26,5 +26,3 @@ def crop_persons_from_frames(frames_folder, output_folder, conf_threshold=0.4):
                 save_path = os.path.join(output_folder, save_name)
                 cv2.imwrite(save_path, resized)
                 count += 1
-
-        print(f"[INFO] Cropped {count} people from {frame_file}")

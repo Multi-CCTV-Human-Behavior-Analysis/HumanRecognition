@@ -29,4 +29,3 @@ def generate_body_embeddings(image_folder, output_folder):
 
         save_path = os.path.join(output_folder, img_name.replace('.jpg', '.npy').replace('.png', '.npy'))
         np.save(save_path, embedding)
-        print(f"[INFO] Saved body embedding for {img_name}")

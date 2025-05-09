@@ -19,9 +19,5 @@ def compare_body_embeddings(folder1, folder2, threshold=0.7):
             sim = cosine_similarity(emb1, emb2)[0][0]
             if sim > threshold:
                 matches.append((name1, name2, sim))
-                print(f"[MATCH ✅] {name1} <==> {name2} | Similarity: {sim:.4f}")
-
-    if not matches:
-        print("❌ No matches found.")
 
     return matches
