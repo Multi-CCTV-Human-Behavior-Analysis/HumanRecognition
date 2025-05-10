@@ -2,8 +2,8 @@ import os
 import shutil
 import torch
 import numpy as np
-from video_to_frames import extract_frames
-from face_embedder import generate_embeddings_from_folder
+from Earlier.video_to_frames import extract_frames
+from Earlier.face_embedder import generate_embeddings_from_folder
 from facenet_pytorch import InceptionResnetV1
 
 # === 설정 ===
