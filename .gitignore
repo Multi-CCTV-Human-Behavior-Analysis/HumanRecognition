@@ -24,3 +24,8 @@ Dataset/
 DukeMTMC-reID/
 GaitDatasetB-silh/
 new video dataset/
+
+crops/
+frame_data1.npy
+frame_data2.npy
+matched_ids.npy
