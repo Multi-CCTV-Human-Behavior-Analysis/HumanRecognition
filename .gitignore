@@ -14,3 +14,8 @@ test_video/
 
 outputs/
 Identification/
+src/tracking/deep_sort/
+
+output2.mp4
+output1.mp4
+requirements.txt

@@ -1,0 +1,3 @@
+The file /multi-camera-person-tracking/multi-camera-person-tracking/data/models/yolo_weights.pt is intended to contain the pre-trained weights for the YOLO model. Since this file is a binary file and not meant to be generated as text, it should be created as an empty file for now, with the understanding that the actual weights will be added later.
+
+# This file is intentionally left blank.
