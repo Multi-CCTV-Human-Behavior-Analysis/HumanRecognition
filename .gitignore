@@ -19,3 +19,8 @@ src/tracking/deep_sort/
 output2.mp4
 output1.mp4
 requirements.txt
+
+Dataset/
+DukeMTMC-reID/
+GaitDatasetB-silh/
+new video dataset/
