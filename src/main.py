@@ -38,8 +38,8 @@ def main():
     deepsort1 = DeepSORT(encoder_path)
     deepsort2 = DeepSORT(encoder_path)
 
-    video_capture1 = cv2.VideoCapture('test_video/view-HC2.mp4')
-    video_capture2 = cv2.VideoCapture('test_video/view-HC3.mp4')
+    video_capture1 = cv2.VideoCapture('test_video/1.mp4')
+    video_capture2 = cv2.VideoCapture('test_video/2.mp4')
 
     ret1, frame1 = video_capture1.read()
     ret2, frame2 = video_capture2.read()

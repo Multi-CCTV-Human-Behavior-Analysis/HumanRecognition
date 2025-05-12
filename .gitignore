@@ -1,31 +1,21 @@
 #Python virtual environment folder
 venv/
 
-# All the required pip libraries for the project
-requirements.txt
-
-Earlier/
 
 #Python Code Cache
 __pycache__/
 test_image/
 .gitignore
-test_video/
 
 outputs/
 Identification/
-src/tracking/deep_sort/
 
 output2.mp4
 output1.mp4
-requirements.txt
-
-Dataset/
-DukeMTMC-reID/
-GaitDatasetB-silh/
-new video dataset/
 
 crops/
 frame_data1.npy
 frame_data2.npy
 matched_ids.npy
+
+multi-camera-person-tracking/
