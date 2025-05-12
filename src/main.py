@@ -34,7 +34,7 @@ def extract_feature_batch(encoder_obj, crop_paths):
 
 def main():
     yolo_model = load_yolo_model('yolov8n.pt')
-    encoder_path = os.path.join(os.path.dirname(__file__), 'tracking/models/mars-small128.pb')
+    encoder_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../models/mars-small128.pb'))
     deepsort1 = DeepSORT(encoder_path)
     deepsort2 = DeepSORT(encoder_path)
 
