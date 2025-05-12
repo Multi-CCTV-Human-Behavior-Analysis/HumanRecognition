@@ -1,7 +1,7 @@
-from tracking.deep_sort.tracker import Tracker
-from tracking.deep_sort.nn_matching import NearestNeighborDistanceMetric
+from deep_sort.tracker import Tracker
+from deep_sort.nn_matching import NearestNeighborDistanceMetric
 from tools.generate_detections import create_box_encoder
-from tracking.deep_sort.detection import Detection
+from deep_sort.detection import Detection
 
 class DeepSORT:
     def __init__(self, model_path):
