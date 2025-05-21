@@ -20,5 +20,3 @@ class DeepSORT:
                 continue
             results.append((track.to_tlbr(), track.track_id))
         return results
-
-#/root/HumanRecognition/deep_sort/tracker.py
