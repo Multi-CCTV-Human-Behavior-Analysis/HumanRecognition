@@ -20,3 +20,5 @@ matched_ids.npy
 
 multi-camera-person-tracking/
 new video dataset/
+DukeMTMC-reID/
+GaitDatasetB-silh/
