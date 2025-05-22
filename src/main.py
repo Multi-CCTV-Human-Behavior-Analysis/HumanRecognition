@@ -2,10 +2,9 @@ import cv2
 import os
 import numpy as np
 import random
+from feature_extraction.feature_extractor import TorchReID
 from detection.yolo_model import load_yolo_model
 from tracking.deepsort import DeepSORT
-from sklearn.metrics.pairwise import cosine_similarity
-from tools.generate_detections import ImageEncoder
 
 def get_random_color():
     """Generate a random color."""
@@ -37,9 +36,10 @@ def main():
     encoder_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../models/mars-small128.pb'))
     deepsort1 = DeepSORT(encoder_path)
     deepsort2 = DeepSORT(encoder_path)
+    reid_model = TorchReID(model_path='models/resnet50-19c8e357.pth', gpu_id=0) # Adjust GPU ID as needed
 
-    video_capture1 = cv2.VideoCapture('test_video/1.mp4')
-    video_capture2 = cv2.VideoCapture('test_video/2.mp4')
+    video_capture1 = cv2.VideoCapture('test_video/view-HC2.mp4')
+    video_capture2 = cv2.VideoCapture('test_video/view-HC3.mp4')
 
     ret1, frame1 = video_capture1.read()
     ret2, frame2 = video_capture2.read()
@@ -117,26 +117,19 @@ def main():
     out2.release()
     cv2.destroyAllWindows()
 
-    # ReID matching
-    encoder = ImageEncoder(encoder_path)
-    feats1 = extract_feature_batch(encoder, [v[0] for v in id_to_crop1.values()])
-    feats2 = extract_feature_batch(encoder, [v[0] for v in id_to_crop2.values()])
-    ids1 = list(id_to_crop1.keys())
-    ids2 = list(id_to_crop2.keys())
+    # ReID Matching Using TorchReID
+    # Aggregate all crops for each ID and extract features
+    features_vid1 = {track_id: reid_model.extract_features(paths) for track_id, paths in id_to_crop1.items()}
+    features_vid2 = {track_id: reid_model.extract_features(paths) for track_id, paths in id_to_crop2.items()}
 
-    sim = cosine_similarity(np.array([f[1] for f in feats1]), np.array([f[1] for f in feats2]))
-    matched_ids = {}
-    for i, row in enumerate(sim):
-        best_match = np.argmax(row)
-        if row[best_match] > 0.8:
-            matched_ids[ids2[best_match]] = ids1[i]
+    # Match using Euclidean distance and aggregate feature comparison
+    matched_ids = reid_model.match_tracks(features_vid1, features_vid2, threshold=320)
 
+    # Save matched ID pairs
     print("Matched IDs:", matched_ids)
-
-    # Save for unified visualization
-    np.save("frame_data1.npy", frame_data1, allow_pickle=True)
-    np.save("frame_data2.npy", frame_data2, allow_pickle=True)
-    np.save("matched_ids.npy", matched_ids)
+    with open("matched_ids.txt", "w") as f:
+        for k, v in matched_ids.items():
+            f.write(f"{k} -> {v}\n")
 
 if __name__ == "__main__":
     main()
